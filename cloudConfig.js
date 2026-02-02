@@ -27,8 +27,30 @@
 
 //-- chatgpt se liya 
 
+// const cloudinary = require("cloudinary").v2;
+// const multerStorageCloudinary = require("multer-storage-cloudinary");
+
+// cloudinary.config({
+//   cloud_name: process.env.CLOUD_NAME,
+//   api_key: process.env.CLOUD_API_KEY,
+//   api_secret: process.env.CLOUD_API_SECRET,
+// });
+
+// const storage = multerStorageCloudinary({
+//   cloudinary: cloudinary,
+//   folder: "wanderlust",
+//   allowedFormats: ["jpeg", "png", "jpg"],
+// });
+
+// module.exports = {
+//   cloudinary,
+//   storage,
+// };
+
+
+//- ye bhi chatgpt se liya 
 const cloudinary = require("cloudinary").v2;
-const multerStorageCloudinary = require("multer-storage-cloudinary");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -36,10 +58,12 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET,
 });
 
-const storage = multerStorageCloudinary({
-  cloudinary: cloudinary,
-  folder: "wanderlust",
-  allowedFormats: ["jpeg", "png", "jpg"],
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: "DeltaProject",
+    allowedFormats: ["jpg", "png", "jpeg"],
+  },
 });
 
 module.exports = {
