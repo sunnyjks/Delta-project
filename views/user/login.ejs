@@ -1,0 +1,50 @@
+<%layout("layout/boilerplate")%>
+
+    <div class="row mt-3">
+        <h1 class="col-6 offset-3"> login WanderLust </h1>
+        <div class="col-8 offset-2">
+            <form action="/login" method="POST" class="needs-validation" novalidate>
+
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input name="username" class="form-control" required type="text" required id="username" />
+                    <!--requires =means hona he chahiye -->
+                    <!--bhai class= form-control ,boostrap se liya -->
+
+                    <!-- bhai form box me shi daalne pr box niche likh ke aane ke liye <div> class niche banaya -->
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <!-- boostrap form ke validation part se liya if price not enter or submit karoge toh ye print hoga-->
+                    <div class="invalid-feedback">
+                        pls enter title
+                    </div>
+                    <!--  -->
+                </div>
+
+
+
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">password</label>
+                    <input name="password" class="form-control" required type="password" required id="password" />
+                    <!--requires =means hona he chahiye -->
+                    <!--bhai class= form-control ,boostrap se liya -->
+
+                    <!-- bhai form box me shi daalne pr box niche likh ke aane ke liye <div> class niche banaya -->
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <!-- boostrap form ke validation part se liya if price not enter or submit karoge toh ye print hoga-->
+                    <div class="invalid-feedback">
+                        pls enter password
+                    </div>
+                    <!--  -->
+                </div>
+                
+                  <button class="btn btn-danger">login</button>
+
+            </form>
+        </div>
+    </div>

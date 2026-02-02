@@ -1,0 +1,152 @@
+<%layout("layout/boilerplate")%>
+<!-- <%= success %>   boilerplate me bana liya iss  design de ke-->  
+
+
+
+  <!-- <h3>All Listings</h3> -->
+<style>
+  .filter{
+    margin-top:1rem;
+    text-align: center;
+    margin-right: 1rem;
+    opacity: 0.7;
+    
+  }
+
+  .filter:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  #filters{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+
+  }
+
+  .filter p{
+    font-size: 0.8rem;
+  }
+
+  .tax-info{
+    display:none;
+  }
+
+  .tax-toggle{
+    border:1px solid rgb(240, 238, 238) ;
+    border-radius: 0.8rem;
+    height:3rem;
+    padding: 0.8rem;
+    margin-left:7rem;
+  }
+</style>
+
+  <div id="filters">
+
+      <div class="filter">
+         <div><i class="fa-solid fa-fire"></i></div>
+        <p> Trending</p>
+      </div>
+
+      <div class="filter">
+         <div><i class="fa-solid fa-house"></i></div>
+        <p> Rooms</p>
+      </div>
+
+
+      <div class="filter">
+         <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p> Iconic city</p>
+      </div>
+
+
+      <div class="filter">
+         <div><i class="fa-solid fa-mountain"></i></div>
+        <p>Mountain </p>
+      </div>
+
+      <div class="filter">
+         <div><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>castles </p>
+      </div>
+
+      <div class="filter">
+         <div><i class="fa-solid fa-person-swimming"></i></div>
+        <p>amazing pool </p>
+      </div>
+      
+
+      
+
+
+
+      <div class="tax-toggle"> <!-- boostrap (form ke radio and check se liya in switches section se -->
+        <div class="form-check form-switch form-check-reverse"> <!--form-check-reverse ye liya uss part ke revesse se switch baaad me text first-->
+  <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+  <label class="form-check-label" for="switchCheckDefault">Display Total After Taxes</label>
+</div>
+      </div>
+
+  </div>
+
+
+  <form method="Get" action="/listings/new">
+    <!-- <button>create New Listing</button>  -->
+  </form>
+
+  <!-- roe class diya taki vertical sab image horizontal ache se arrange ho jaye -->
+  <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-3"> 
+    <!-- bhai boostrap se copy kiya card code  -->
+    <% for (let listing of allListings){%>
+      <!-- kahe bhi img pr click kiya toh us  img ka data route ke help se dikhega -->
+      <a href="/listings/<%=listing._id%>" class="listing-link">
+
+      <div class="card col=1 listing-card">
+        <img src="<%= listing.image && listing.image.url ? listing.image.url : '/images/default.jpg' %>" class="card-img-top" alt="no image" style="height:20rem">
+        
+        <!-- overlay on card toh niche wala class liya from boostrap -->
+       <div class="card-img-overlay">hi there keep suff</div>
+        <div class="card-body">
+          <p class="card-text">
+           <b><%= listing.title %></b> 
+              <br>
+              &#8377;<%= listing.price.toLocaleString("en-IN") %>/night
+                <br>
+                <i class="tax-info"> &nbsp;+18% GST</i> <!-- ye add kiya for tax toogler effect ke liye-->
+          </p>
+        </div>
+      </div>
+      </a>
+      <%}%>
+  </div>
+  <!-- end here -->
+
+
+
+
+
+  <!-- <ul>
+    <% for (let listing of allListings){%>
+      <li><a href="/listings/<%=listing._id%>">
+          <%= listing.title %>
+        </a></li>
+      <%}%>
+  </ul> -->
+
+  <script> // bhai ye kiya tax toggler ke liye 
+    let taxSwitch = document.getElementById("switchCheckDefault")
+    taxSwitch.addEventListener("click",()=>{
+      // console.log("clicked")
+      let taxinfo = document.getElementsByClassName('tax-info')
+      for(info of taxinfo){
+        if(info.style.display != "inline"){
+            info.style.display = "inline";
+        }else{
+          info.style.display = "none";
+        }
+        
+      }
+    })
+  </script>

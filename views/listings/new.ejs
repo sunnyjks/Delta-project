@@ -1,0 +1,106 @@
+<%layout("layout/boilerplate")%>
+
+  <div class="row">
+
+    <div class="col-8 offset-2">
+      <!-- offset diya taki left side form kitna hate dur  & screen  mana lo col 12 me hai toh 8 part he of col form le  -->
+      
+
+      <h2>Create New listing </h2>
+
+      <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data"> <!--[remember jab file form ke through bhejna hai toh enctype =multipart/form-data de do] novalidate class="needs-validation boostrap se liya ek folder bhi banaya or niche script add kiya form val err chrome na balki boostrap ka lage-->
+
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input name="listing[title]" placeholder="enter title" class="form-control" required/>  <!--requires =means hona he chahiye -->
+          <!--bhai class= form-control ,boostrap se liya -->
+
+          <!-- bhai form box me shi daalne pr box niche likh ke aane ke liye <div> class niche banaya -->
+                 <div class="valid-feedback">
+                   Looks good!
+                 </div>
+                 <!-- boostrap form ke validation part se liya if price not enter or submit karoge toh ye print hoga-->
+               <div class="invalid-feedback">
+                  pls enter title
+                 </div>
+                 <!--  -->
+        </div>
+
+
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea name="listing[description]" placeholder="enter description" class="form-control" required></textarea>
+
+          <!-- boostrap form ke validation part se liya if price not enter or submit karoge toh ye print hoga-->
+               <div class="invalid-feedback">
+                  pls enter description
+                 </div>
+        </div>
+
+
+
+        <!-- niche wala new concept aaya toh ye commented <div class="mb-3">
+          <label for="image" class="form-label">image url</label>
+          <input name="listing[image]" placeholder="enter image URL/Link" class="form-control" >
+        </div> -->
+
+
+         <div class="mb-3">  <!-- is liye liye form me enctype dena hota hai remember-->
+          <label for="image" class="form-label">Upload img</label>
+          <input name="listing[image]" type="file"  class="form-control" >
+          required
+        </div>
+
+        <div class="row">
+          <!-- manlo ki price or country vertical arrange hai toh usse col wise ya horizontally lana ho isliye class=row diya-->
+
+          <div class="mb-3 col-md-4"> <!-- medium screen ke baad price and country box alag row me aajayege -->
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" placeholder="enter price"  class="form-control" required>
+             <!-- boostrap form ke validation part se liya if price not enter or submit karoge toh ye print hoga-->
+               <div class="invalid-feedback">
+                  pls enter price
+                 </div>
+
+          </diV>
+
+
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" placeholder="enter country" type="text" class="form-control" required>
+
+
+            <!-- boostrap form ke validation part se liya if price not enter or submit karoge toh ye print hoga-->
+               <div class="invalid-feedback">
+                  pls enter country
+                 </div>
+          </div>
+
+        </div>
+
+
+
+
+
+        <div class="mb-5">
+          <label for="location" class="form-label">location</label>
+          <input name="listing[location]" placeholder="enter location" type="text" class="form-control" required>
+
+          <!-- boostrap form ke validation part se liya if price not enter or submit karoge toh ye print hoga-->
+               <div class="invalid-feedback">
+                  pls enter location
+                 </div>
+
+        </div>
+
+
+
+        <button class="btn btn-dark add-btn">Add </button>
+        <br />
+        <br/>
+      </form>
+
+    </div>
+  </div>

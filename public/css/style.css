@@ -1,0 +1,150 @@
+body{
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh !important;
+   
+background: #c7e8f0;
+background: radial-gradient(circle, rgba(199, 232, 240, 1) 67%, rgba(245, 155, 0, 1) 87%);
+}
+
+.container{
+    flex:1 !important;
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+
+
+/* navbar */
+
+/* nav.navbar lagna pr or jada specficc imp hota hai ke !important */
+nav.navbar{               
+    height:5rem;
+    /* background-color: white !important; */
+   background: #EEAECA;
+background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%) !important;
+}
+.fa-compass{
+    color:#fe424d;
+    font-size: 2rem;
+    
+}
+/* !important ye override karega boostrap style */
+ .nav-link{
+    color:#222222 !important;
+    font-weight: 600 !important;    
+    font-size: 20px !important;
+} 
+
+/* footer */
+.f-info-links a{
+    text-decoration: none !important;
+    color:#222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline !important;
+}
+
+.f-info{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    height:6rem;
+    background-color: #ebebeb;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand{
+    width:100%;
+     font-size: 1.1rem;
+     vertical-align: middle;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.f-info-links a{
+    margin-right: 0.3rem;
+}
+
+.f-info-socials i{
+    margin-right: 0.5rem;
+}
+
+
+/* cards */
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+
+}
+
+.card-img-top{
+    border-radius: 1rem;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding:0 !important;
+}
+
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none !important;
+}
+
+/* card -effect */
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+/* .card-img-overlay:hover{
+    opacity: 0.2 !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+} */
+
+.card-img-overlay:hover{
+    opacity: 0.1;
+    background-color: white;
+}
+
+
+/* new add listing btn */
+
+.add-btn{
+    background-color: red !important;
+}
+
+/* show page ke bare me */
+
+/* width humne show page me daal hai row and col use cocnept */
+
+.show-img{
+    height:40vh;
+    
+}
+
+.btns{
+    display:flex;
+
+}
+
+.show-card{
+    padding-left:0;
+    padding-right:0;
+}
+
+
+
