@@ -80,12 +80,26 @@
 
       
 
+<style>
+  /* desktop */
+.taxes-box {
+  margin-top: 2rem;   /* desktop me thoda gap */
+}
 
+/* mobile view */
+@media (max-width: 576px) {
+  .taxes-box {
+    margin-top: 0.5rem;  /* amazing pool ke paas aa jayega */
+  }
+}
+
+</style>
 
       <div class="tax-toggle"> <!-- boostrap (form ke radio and check se liya in switches section se -->
         <div class="form-check form-switch form-check-reverse"> <!--form-check-reverse ye liya uss part ke revesse se switch baaad me text first-->
   <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-  <label class="form-check-label" for="switchCheckDefault">Display Total After Taxes</label>
+  <div class="taxes-box"><label class="form-check-label text-nowrap" for="switchCheckDefault">Display Total After Taxes</label> </div>
+  
 </div>
       </div>
 
